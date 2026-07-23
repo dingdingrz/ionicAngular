@@ -1,0 +1,7 @@
+{
+  "name": "ionicTabApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular-standalone"
+}

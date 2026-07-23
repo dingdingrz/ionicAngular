@@ -1,0 +1,21 @@
+.container_todoList {
+    background-color: #ccc;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.content {
+    width:30%;
+    margin:0 auto;
+    height:80%;
+    background-color: #fff;
+    padding: 20px;
+}
+.operate {
+    height: 50px;
+}
+.listContainer {
+    height: calc(100% - 50px);
+    overflow-y: auto;
+}

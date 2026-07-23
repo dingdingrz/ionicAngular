@@ -1,0 +1,17 @@
+<label for="name">Name: </label>
+<input id="name" type="text" [formControl]="name">
+
+<label for="ha">ha: </label>
+<input id="ha" type="text" [formControl]="ha">
+
+<button (click)="handleClick()">点击</button>
+
+<form [formGroup]="profile" (ngSbumit)="onSubmit()">
+  <label for="filed1">Filed 1: </label>
+  <input id="filed1" type="text" formControlName="filed1">
+
+  <label for="filed2">Filed 2: </label>
+  <input id="filed2" type="text" formControlName="filed2">
+</form>
+<div>{{profile.status}}</div>
+<button (click)="onSubmit()">提交</button>

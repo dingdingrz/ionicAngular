@@ -1,0 +1,18 @@
+ion-card {
+  margin-bottom: 16px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+ion-list {
+  margin-top: 16px;
+}
+
+ion-item {
+  --min-height: 80px;
+}

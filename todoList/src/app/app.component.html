@@ -1,0 +1,16 @@
+
+<div class="container_todoList">
+  <div class="content">
+    <div class="operate">
+          <app-operate-box (addTodoItem)="addTodoItem($event)"></app-operate-box>
+
+    </div>
+    <div class="listContainer">
+          <app-todo-list [todoList]="todoList" (deleteItem)="deleteTodoItem($event)"></app-todo-list>
+
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+  

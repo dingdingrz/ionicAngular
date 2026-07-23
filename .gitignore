@@ -1,0 +1,40 @@
+# ====== 系统文件 ======
+# Windows
+**/Thumbs.db
+**/ehthumbs.db
+**/Desktop.ini
+# Mac
+.DS_Store
+
+# ====== Node/前端依赖 ======
+**/node_modules/
+**/abdroid/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ====== Angular / Ionic 构建产物 ======
+**/dist/
+**/www/
+**/.angular/
+**/.ionic/
+**/android/
+
+# ====== Capacitor Android原生构建目录 ======
+**/android/build/
+**/android/app/build/
+**/android/.gradle/
+**/android/captures/
+**/android/local.properties
+
+# ====== IDE编辑器文件 ======
+**/.idea/
+**/.vscode/
+*.swp
+*.swo
+
+# ====== 打包证书、安装包 ======
+*.apk
+*.jks
+*.keystore

@@ -1,0 +1,10 @@
+.operate-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.inputItem {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}

@@ -1,0 +1,44 @@
+.heroes {
+    list-style-type: none;
+    padding: 0;
+    width: 40%;
+    margin: 0 auto;
+    
+}
+.item {
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(238, 238, 238);
+    margin-bottom:8px;
+    display: flex;
+    justify-content:flex-start;
+    cursor: pointer;
+
+}
+.idContainer {
+    width: 50px;
+    text-align: center;
+    background-color: rgb(96, 125, 139);
+    color:white;
+    margin-right: 8px;
+}
+.selected {
+    background-color: rgb(187, 216, 220);
+    color:white;
+}
+.hovered {
+    background-color: rgb(187, 216, 220);
+    color:tomato
+}
+.operatBox {
+    padding-top: 10px;
+}
+.cancelButton {
+    margin-left: 4px;
+}
+.itemContent {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    padding-right: 10px;
+}

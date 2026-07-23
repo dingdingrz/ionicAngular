@@ -1,0 +1,40 @@
+
+<ul class="heroes" *ngIf="!isAdd">
+    <li *ngFor="let item of heroList let index = index "
+    class="item"
+    (click)="onSelect(item)"
+    [class.selected]="item.id === chooseItem?.id"
+    (mouseenter)="hoveredIndex = index"
+    (mouseleave)="hoveredIndex = null"
+    [class.hovered]="hoveredIndex === index"
+    >
+       <div class="idContainer">{{item.id}}</div>
+       <div class="itemContent">
+
+     
+       <div>{{item.name}}</div>   
+       <div>
+            <button (click)="deleteItem(item,$event)">delete</button>
+       </div>
+         </div>
+       
+    </li>
+    <button *ngIf="!isAdd" (click)="addHeros()" >添加</button>
+</ul>
+<div *ngIf="isAdd" class="heroes">
+    <label for="new-hero">添加新英雄</label>
+    <input type="text" id="new-hero" #heroName>
+    <div class="operatBox">
+       <button (click)="handleAdd(heroName.value); heroName.value = ''">保存</button>
+         <button class="cancelButton" (click)="isAdd = false">取消</button>
+    </div>
+    
+   
+</div>
+
+<div *ngIf="chooseItem" class="heroes">
+    <div>{{chooseItem?.name}} is my hero</div>
+    <button routerLink="/detail/{{chooseItem?.id}}"> view Details</button>
+</div>
+
+

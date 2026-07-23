@@ -1,0 +1,7 @@
+{
+  "name": "hero-sqlite2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

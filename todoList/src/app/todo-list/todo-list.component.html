@@ -1,0 +1,8 @@
+
+<ul class="todo-list">
+    <li *ngFor="let item of todoList let index =index"  [class.active]="index === activeIndex" class="todo-item" (mouseenter)="setActiveIndex(index)" (mouseleave)="setActiveIndex(-1)"> 
+        <div>{{item}}</div>
+        <button (click)="deleteItem.emit(index)">删除</button>
+        <!-- <button (click)="jumptoDetail(index)">详情</button> -->
+    </li>
+</ul>

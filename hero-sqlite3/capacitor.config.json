@@ -1,0 +1,6 @@
+{
+  "appId": "io.herosqlite3.app",
+  "appName": "HeroSQLite3",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

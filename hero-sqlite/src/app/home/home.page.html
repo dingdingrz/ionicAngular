@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Ionic6 SQLite 英雄之旅</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- 表单区域 -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ isEdit ? '编辑英雄' : '新增英雄' }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="stacked">英雄名称</ion-label>
+        <ion-input [(ngModel)]="formData.name" placeholder="输入名称"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">战力数值</ion-label>
+        <ion-input type="number" [(ngModel)]="formData.power"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">专属技能</ion-label>
+        <ion-input [(ngModel)]="formData.skill"></ion-input>
+      </ion-item>
+      <div class="ion-margin-top">
+        <ion-button color="success" (click)="submitSave()">保存</ion-button>
+        <ion-button color="medium" fill="outline" (click)="resetForm()">重置</ion-button>
+        <ion-button color="warning" fill="outline" (click)="addTestData()">导入测试数据</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list-header class="ion-margin-top">英雄列表</ion-list-header>
+  <ion-list>
+    <ion-item *ngFor="let item of heroList">
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>战力：{{ item.power }} | 技能：{{ item.skill }}</p>
+      </ion-label>
+      <ion-button slot="end" color="primary" size="small" (click)="editItem(item)">编辑</ion-button>
+      <ion-button slot="end" color="danger" size="small" (click)="delItem(item.id!)">删除</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

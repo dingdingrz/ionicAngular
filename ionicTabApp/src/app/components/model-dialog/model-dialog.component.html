@@ -1,0 +1,28 @@
+<ion-modal [isOpen]="isOpenDialog">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start" (click)="handleCloseDialog()">取消</ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="handleConfirm()">确认</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="editeContent">
+        <ion-row>
+          <ion-col>id </ion-col>
+          <ion-col><ion-text>{{editObj?.id}}</ion-text> </ion-col>
+
+        </ion-row>
+     
+        <div>
+          <ion-label>编辑的英雄名称</ion-label>
+          <input type="text" [ngModel]="editObj?.name">
+        </div>
+
+      </div>
+
+    </ion-content>
+  </ng-template>
+</ion-modal>

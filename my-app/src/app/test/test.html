@@ -1,0 +1,25 @@
+<p>test works!ddddddddddddd</p>
+<div>{{title}}</div> 
+<a [href]="url" target="_blank">百度大是大非{{url}}</a>
+<div *ngFor="let item of list let i = index"
+ (click)="chooseCurrent(i)"
+ [ngClass]="{'active':current === i}"
+>{{item}}</div>
+<button (click)="onClick($event)">点击</button>
+<div [ngClass]="{'active':true}">afdafd</div>
+
+<div>属性绑定</div> 
+<input type="text" [value]="title" (input)="title=$event.target.value" />
+
+<input type="text" [(ngModel)]="title" />
+
+<select [(ngModel)]="habby" (change)="onChange($event)">
+    <option value='吃饭'>吃饭</option>
+    <option value='睡觉'>睡觉</option>
+    <option value='打豆豆'>打豆豆</option>
+
+</select>
+<div>{{habby}}</div>
+<div>{{d| date:"yyyy-MM-dd"}}</div>
+<div>{{parentValue}}</div>
+<div>{{cart.name}}</div>
