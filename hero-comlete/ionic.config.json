@@ -1,5 +1,7 @@
 {
   "name": "hero-comlete",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
