@@ -21,7 +21,8 @@ export class HeroesComponent implements OnInit {
   constructor(
     private heroService: HeroService,
     private messageService:MessageService,
-    private location: Location
+    private location: Location,
+    // private tokenInterceptor:TokenInterceptor
   ) { }
   onSelect(item: Hero): void {
     this.chooseItem = item;
