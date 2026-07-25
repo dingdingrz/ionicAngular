@@ -12,7 +12,7 @@
        <div class="itemContent">
 
      
-       <div>{{item.name}}</div>   
+       <div [@openClose]="hoveredIndex === index ? 'open' : 'close' ">{{item.name}}</div>   
        <div>
             <button (click)="deleteItem(item,$event)">delete</button>
        </div>
