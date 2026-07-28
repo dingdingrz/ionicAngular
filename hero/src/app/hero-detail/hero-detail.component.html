@@ -7,4 +7,12 @@
         <input type="text" id="hero-name" [(ngModel)]="hero.name" placeholder="hero name" />
     </div>
     <button (click)="handleBack()">go back</button>
+    <form [formGroup]="loginForm" (ngSubmit)="handleSubTest()">
+        <input type="text" formControlName="account">
+        <input type="text" formControlName="pwd">
+        <button type="submit">提交</button>
+        <button (click)="handleReset()" type="button">重置</button>
+    </form>
 </div>
+{{vuexMessage}}
+<app-detail-grand-detail></app-detail-grand-detail>

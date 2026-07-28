@@ -4,11 +4,15 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router'
 import { trigger, state, style, animate,transition } from '@angular/animations';
+import { LikeVuexServiceService } from '../like-vuex-service.service'
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css'],
+
   animations: [
     trigger('openClose', [
       // state('open', style({
@@ -53,15 +57,22 @@ export class HeroesComponent implements OnInit {
   hoveredIndex: number | null = null;
   isAdd: Boolean = false
   chooseItem: Hero | null = null;
+  sub!:Subscription
+    shareMessage = '';
   constructor(
     private heroService: HeroService,
     private messageService: MessageService,
     private location: Location,
+    private router:Router,
+    private likeVuexServiceService:LikeVuexServiceService
     // private tokenInterceptor:TokenInterceptor
   ) { }
   onSelect(item: Hero): void {
     this.chooseItem = item;
+    console.log(item,'item')
     this.messageService.add(`selectHerorId id  ${item.id}`)
+    this.likeVuexServiceService.changeMessage('jiujiu')
+    this.router.navigate(['/detail',item.id])
 
   }
   getList() {
@@ -94,6 +105,12 @@ export class HeroesComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getList()
+    this.sub = this.likeVuexServiceService.messageReader.subscribe(res=> {
+      this.shareMessage = res
+    })
+  }
+  ngOnDestory() {
+    this.sub.unsubscribe()
   }
 
 }

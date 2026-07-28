@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -11,7 +11,8 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageComponent } from './message/message.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailGrandDetailComponent } from './detail-grand-detail/detail-grand-detail.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
    
     HeroDetailComponent,
         DashboardComponent,
-        MessageComponent
+        MessageComponent,
+        DetailGrandDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService,{dataEncapsulation:false}
     )
