@@ -1,0 +1,82 @@
+<div class="game-container">
+  <h1 class="title">🐍 贪食蛇</h1>
+
+  <!-- 分数面板 -->
+  <div class="score-board">
+    <div class="score-item">
+      <span class="label">得分</span>
+      <span class="value">{{ score }}</span>
+    </div>
+    <div class="score-item">
+      <span class="label">最高分</span>
+      <span class="value high">{{ highScore }}</span>
+    </div>
+  </div>
+
+  <!-- 游戏区域 -->
+  <div class="game-board"
+       [style.width.px]="GRID_SIZE * CELL_SIZE"
+       [style.height.px]="GRID_SIZE * CELL_SIZE">
+    <div *ngFor="let row of [].constructor(GRID_SIZE); let y = index" class="row">
+      <div *ngFor="let col of [].constructor(GRID_SIZE); let x = index"
+           [class]="getCellClass(x, y)">
+        <!-- 蛇头眼睛 -->
+        <div *ngIf="isSnakeHead(x, y)" class="snake-eyes"
+             [style.transform]="getHeadRotation()">
+          <span class="eye"></span>
+          <span class="eye"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 游戏未开始覆盖层 -->
+    <div *ngIf="!isStarted && !isGameOver" class="overlay">
+      <div class="overlay-content">
+        <p class="overlay-title">🐍 贪食蛇</p>
+        <p>按 <kbd>Enter</kbd> 或 <kbd>空格</kbd> 开始游戏</p>
+        <p class="hint">使用方向键控制蛇的移动</p>
+      </div>
+    </div>
+
+    <!-- 暂停覆盖层 -->
+    <div *ngIf="isPaused" class="overlay pause-overlay">
+      <div class="overlay-content">
+        <p class="overlay-title">⏸️ 暂停中</p>
+        <p>按 <kbd>空格</kbd> 继续游戏</p>
+      </div>
+    </div>
+
+    <!-- 游戏结束覆盖层 -->
+    <div *ngIf="isGameOver" class="overlay gameover-overlay">
+      <div class="overlay-content">
+        <p class="overlay-title">💀 游戏结束</p>
+        <p class="final-score">得分：<strong>{{ score }}</strong></p>
+        <p *ngIf="score >= highScore && score > 0" class="new-record">🎉 新纪录！</p>
+        <p>按 <kbd>空格</kbd> 重新开始</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 操作说明 -->
+  <div class="controls-info">
+    <div class="control-item">
+      <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>
+      <span>移动</span>
+    </div>
+    <div class="control-item">
+      <kbd>空格</kbd>
+      <span>暂停/开始</span>
+    </div>
+  </div>
+
+  <!-- 移动端虚拟方向键 -->
+  <div class="mobile-controls">
+    <button class="ctrl-btn up" (click)="onMobileControl('UP')">↑</button>
+    <div class="middle-row">
+      <button class="ctrl-btn left" (click)="onMobileControl('LEFT')">←</button>
+      <button class="ctrl-btn pause" (click)="togglePause()">⏸</button>
+      <button class="ctrl-btn right" (click)="onMobileControl('RIGHT')">→</button>
+    </div>
+    <button class="ctrl-btn down" (click)="onMobileControl('DOWN')">↓</button>
+  </div>
+</div>

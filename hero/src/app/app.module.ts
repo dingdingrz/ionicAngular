@@ -12,7 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MessageComponent } from './message/message.component';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DetailGrandDetailComponent } from './detail-grand-detail/detail-grand-detail.component'
+import { DetailGrandDetailComponent } from './detail-grand-detail/detail-grand-detail.component';
+import { SvgPraticeComponent } from './svg-pratice/svg-pratice.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { DetailGrandDetailComponent } from './detail-grand-detail/detail-grand-d
     HeroDetailComponent,
         DashboardComponent,
         MessageComponent,
-        DetailGrandDetailComponent
+        DetailGrandDetailComponent,
+        SvgPraticeComponent
   ],
   imports: [
     BrowserModule,
